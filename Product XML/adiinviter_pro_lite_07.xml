@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<product productid="adiinviter" active="1">
+	<title>AdiInviter Pro v0.7 Lite</title>
+	<description>The ultimate contacts inviter and find friends application for your website.</description>
+	<version>0.7</version>
+	<url>https://www.adiinviter.com</url>
+	<versioncheckurl>http://www.adiinviter.com/vbulletinversioncheck.php</versioncheckurl>
+	<dependencies>
+	</dependencies>
+	<codes>
+	</codes>
+	<templates>
+		<template name="adiinviter_menu" templatetype="template" date="1231346464" username="nirvana43" version="0.7"><![CDATA[<li <vb:if condition="$adiinviter_page == 1">class="selected"</vb:if> id="vbtab_adiinviter">
+	<a class="navtab" href="adiinviter.php">Invite Friends</a>
+</li>
+]]></template>
+		<template name="custom_adiinviter" templatetype="template" date="1231346464" username="nirvana43" version="0.7"><![CDATA[{vb:stylevar htmldoctype}
+<html xmlns="http://www.w3.org/1999/xhtml"<vb:if condition="$vboptions['enablefacebookconnect']"> xmlns:fb="http://www.facebook.com/2008/fbml"</vb:if> dir="{vb:stylevar textdirection}" lang="{vb:stylevar languagecode}" id="vbulletin_html">
+<head>
+  {vb:raw headinclude}
+  <title>{vb:raw pagetitle}</title>
+  <vb:if condition="$show['inlinemod']"><script type="text/javascript" src="clientscript/vbulletin_inlinemod.js?v={vb:raw vboptions.simpleversion}"></script></vb:if>
+  <script type="text/javascript" src="clientscript/vbulletin_read_marker.js?v={vb:raw vboptions.simpleversion}"></script>
+  <vb:if condition="$show['ajax_js']">
+    <script type="text/javascript" src="clientscript/vbulletin-ajax-threadlist.js?v={vb:raw vboptions.simpleversion}"></script>
+    <script type="text/javascript">
+    <!--
+      var titlemaxchars = parseInt("{vb:raw vboptions.titlemaxchars}"),
+      input_padding = parseInt("{vb:stylevar input_padding}");
+    //-->
+    </script>
+  </vb:if>
+  <vb:if condition="$vboptions['storecssasfile']">
+    {vb:cssfile forumdisplay-rollup.css}
+  <vb:else />
+    {vb:cssfile toolsmenu.css,forumbits.css,forumdisplay.css,threadlist.css,options.css}
+  </vb:if>
+
+  <!--[if lt IE 8]>
+  <script type="text/javascript" src="clientscript/vbulletin-threadlist-ie.js?v={vb:raw vboptions.simpleversion}"></script>
+    {vb:cssfile toolsmenu-ie.css,forumbits-ie.css,forumdisplay-ie.css,threadlist-ie.css,options-ie.css}
+  <![endif]-->
+  {vb:raw headinclude_bottom}
+
+
+
+
+<style type="text/css">
+.adi_clear_table, .adi_clear_form, .adi_stickBorders, .adi_clear_td, .adi_clear_tr, .adi_clear_img,
+.adi_clear_ol, .adi_clear_ul, .adi_clear_li, .adi_clear_p, .adi_clear_iframe, .adi_clear_span {
+   margin:0px; padding:0px; border:0px;
+   box-shadow: none;
+}
+.adi_clear_span {
+   height:auto;
+   width:auto;
+}
+.adi_clear_ol, .adi_clear_ul, .adi_clear_li {
+   list-style: none none;
+}
+.adi_clear_table {
+   border-collapse: collapse;
+}
+.adi_link, .adi_power_text {
+font-family: Verdana, Geneva, Lucida, 'Lucida grande', Arial, Helvetica, Sans-serif;
+}
+
+
+.adi_stick_borders
+{
+   position: fixed;
+   display: none;
+   left: 0px;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   width: 100%;
+   height: 100%;
+   margin: 0px;
+   padding: 0px;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+.adi_mask
+{
+   filter: opacity(70);
+   z-index: 1000;
+}
+.adi_popup
+{
+   z-index: 1005;
+}
+.adi_login_form_width
+{
+   width: 530px;
+   border: 1px solid #D1D1D1;
+   border: {vb:stylevar blockhead_border};
+}
+.adi_block_header
+{
+   font-family: Verdana, Geneva, Lucida, 'Lucida grande', Arial, Helvetica, Sans-serif; font-weight: bold; 
+   font-weight: bold; font-size: 14px;
+   padding-top: 10px;
+   padding-{vb:stylevar right}: 3px;
+   padding-bottom: 8px;
+   padding-{vb:stylevar left}: 9px;
+   margin: 0px;
+   display: block;
+   text-align: {vb:stylevar left};
+   color: #484848;
+   color: {vb:stylevar blockhead_color};
+   background: {vb:stylevar navbar_background};
+   background: {vb:stylevar blockhead_background};
+   border-bottom: 1px solid #D1D1D1;
+   border-bottom: {vb:stylevar blockhead_border};
+}
+.adi_block_section_outer
+{
+   
+}
+
+.adi_security_table
+{
+   margin-top: 25px;
+   margin-bottom: 15px;
+}
+.adi_security_text
+{
+font-family: Verdana, Geneva, Lucida, 'Lucida grande', Arial, Helvetica, Sans-serif;
+   color: #787878;
+   font-size: 12px;
+   height:16px;
+   padding-{vb:stylevar left}: 16px;
+   background: url(images/adiinviter/lock.png) 0px 0px no-repeat;
+   line-height: 17px;
+}
+/*.adi_login_table
+{
+   border: 1px solid #D1D1D1;
+   border: {vb:stylevar blockhead_border};
+}*/
+.adi_label_col
+{
+   padding-top: 7px;
+   padding-{vb:stylevar right}: 10px;
+   padding-bottom: 7px;
+   padding-{vb:stylevar left}: 10px;
+
+   vertical-align: middle;
+   text-align: {vb:stylevar right};
+font-family: Verdana, Geneva, Lucida, 'Lucida grande', Arial, Helvetica, Sans-serif;
+}
+.adi_input_col
+{
+   padding-top: 7px;
+   padding-{vb:stylevar right}: 10px;
+   padding-bottom: 7px;
+   padding-{vb:stylevar left}: 0px;
+
+   vertical-align: middle;
+   text-align: {vb:stylevar left};
+   width: 230px;
+}
+.adi_input
+{
+   padding: 4px;
+   font-size: 13px;
+   font-family: Verdana,Tahoma;
+   width: 100%;
+   height: 32px;
+   box-sizing: border-box;
+}
+.adi_input:focus
+{
+   background-color: {vb:stylevar input_focus_background.backgroundColor};
+}
+
+.adi_dropdown_out
+{
+   position: relative;
+}
+.adi_dropdown_input
+{
+   padding-{vb:stylevar left}: 32px;
+}
+.adi_dropdown_select
+{
+   position: absolute;
+   display: none;
+   background: {vb:stylevar blockbody_background};
+   border: {vb:stylevar blockhead_border};
+   margin-top: -1px;
+}
+.adi_dd_option
+{
+   margin-top: 5px;
+   padding: 8px 10px;
+   padding-{vb:stylevar left}: 33px;
+   width: 185px;
+   cursor: pointer;
+}
+.adi_dd_option:hover
+{
+   background-color : {vb:stylevar general_hilite_color.Color};
+}
+.adi_gmail_dropdown
+{
+   background-image: url(images/adiinviter/gmail.png);
+   background-position: 6px 8px;
+   background-repeat: no-repeat;
+}
+.adi_yahoo_dropdown
+{
+   background-image: url(images/adiinviter/yahoo.png);
+   background-position: 6px 8px;
+   background-repeat: no-repeat;
+}
+
+#adi_dd_up_arrow
+{
+   display:none;
+   position: absolute;
+   top: 10px;
+   right: 13px;
+}
+#adi_dd_down_arrow
+{
+   position: absolute;
+   top: 10px;
+   right: 13px;
+}
+
+.adi_text_input
+{
+
+}
+.adi_password_input
+{
+
+}
+.adi_sub_header
+{
+   margin-top: 20px;
+   margin-bottom: 20px;
+   font-size: 13px;
+   color: #282828;
+}
+.adi_secondary_text
+{
+   font-family: Verdana, Arial;
+   margin-{vb:stylevar left}: 10px;
+   margin-bottom: 15px;
+}
+.adi_textarea_input
+{
+   height: 120px;
+   width: 320px;
+   font-size: 12px;
+   font-family: Verdana, Arial;
+   resize: none;
+   overflow: auto;
+}
+
+.adi_button
+{
+   position: relative;
+   display: inline-block;
+   float:none;
+   padding: 6px 15px 6px 15px;
+   cursor: pointer;
+   font-family: Verdana;
+   font-size: 13px;
+   font-weight: bold;
+   outline: none;
+}
+.adi_login_button, .adi_skip_button
+{
+   margin-top: 25px;
+   margin-bottom: 25px; 
+}
+.adi_skip_button
+{
+   margin-{vb:stylevar right}: 15px;
+}
+.adi_contacts_list_out
+{
+   max-height: 400px;
+   overflow-x: hidden;
+   overflow-y: auto;
+   border-bottom: 1px solid #CCC;
+}
+.adi_contacts_table
+{
+   width:100%;
+}
+.adi_contacts_table td
+{
+   padding: 7px 5px;
+}
+.adi_contacts_table th
+{
+   padding: 7px 5px;
+   color:{vb:stylevar blocksubhead_color};
+   background:{vb:stylevar blocksubhead_background};
+   border-top:{vb:stylevar blocksubhead_border};
+   border-bottom:{vb:stylevar blocksubhead_border};
+   font-weight:bold;
+font-family: Verdana, Geneva, Lucida, 'Lucida grande', Arial, Helvetica, Sans-serif;
+}
+.adi_contacts_table tr *
+{
+   cursor: pointer;
+}
+.adi_contacts_table tr:nth-of-type(even)
+{
+    background: #f9f9f9; 
+}
+.adi_contacts_table tr:hover
+{
+   background : {vb:stylevar general_hilite_color};
+}
+.adi_contact_name
+{
+   width: 220px;
+   text-overflow: ellipsis;
+   max-height: 16px;
+   overflow: hidden;
+font-family: Verdana, Geneva, Lucida, 'Lucida grande', Arial, Helvetica, Sans-serif;
+}
+.adi_message_table
+{
+   margin-top: 25px;
+   margin-bottom: 25px;
+}
+.adi_ack_text
+{
+   margin-top: 25px;
+   font-size: 13px;
+   font-family: Verdana;
+   font-weight: bold;
+   color: #484848;
+}
+
+.adi_sf_popup_outer
+{
+   background: {vb:stylevar blockbody_background};
+   padding: 10px;
+}
+.adi_pp_subhead
+{
+   font-family: Verdana, Geneva, Lucida, 'Lucida grande', Arial, Helvetica, Sans-serif; 
+   font-weight: normal; font-size: 13px; 
+   line-height: 16px;
+   text-align: {vb:stylevar left};
+   margin-top: 0px;
+   margin-{vb:stylevar right}: 0px;
+   margin-bottom: 8px;
+   margin-{vb:stylevar left}: 0px;
+}
+.adi_formats_div {
+   margin: 15px 0px; padding: 0px;
+   text-align: {adi_var:left};
+   width: 585px;
+   height: auto;
+   background: #F5F5F5;
+   border: 1px solid #E9E9E9;
+}
+.adi_formats_list {
+   background: none; border:none;
+   text-align: {adi_var:left};
+   list-style: decimal inside;
+   margin:0px;padding:0px;
+}
+.adi_formats_list li {
+   background: none; border:none;
+   padding: 5px 10px; margin: 0px;
+   color: #777; font-size: 13px;
+   list-style: decimal inside;
+}
+.adi_formats_list li span {
+   line-height: 16px;
+   color: #282828;
+}
+.adi_plain_text, .adi_format_name
+{
+   color: #282828;
+   font-family: Verdana, Geneva, Lucida, 'Lucida grande', Arial, Helvetica, Sans-serif; font-weight: normal; font-size: 13px;
+   line-height: 14px;
+}
+.adi_format_name
+{
+   font-size: 12px;
+   line-height: 16px;
+   color: #777;
+}
+.adi_format_email
+{
+   font-size: 12px;
+   line-height: 16px;
+}
+.adi_act_btns
+{
+   text-align: right;
+}
+</style>
+
+</head>
+
+<body>
+
+{vb:raw header}
+
+{vb:raw navbar}
+
+<vb:if condition="$announcebits">
+<ol id="announcements" class="announcements">
+  {vb:raw announcebits}
+</ol>
+</vb:if>
+
+<div align="center"><center>{vb:raw contents}</center></div>
+
+{vb:raw footer}
+</body>
+</html>
+]]></template>
+	</templates>
+	<stylevardfns>
+	</stylevardfns>
+	<stylevars>
+	</stylevars>
+	<plugins>
+		<plugin active="1" executionorder="5">
+			<title>AdiInviter</title>
+			<hookname>process_templates_complete</hookname>
+			<phpcode><![CDATA[global $vbulletin;
+$adi_show_menu = true;
+if($vbulletin->options['adi_system_onoff'] != 1)
+{
+	$adi_show_menu = false;
+}
+if($vbulletin->userinfo['userid']+0 === 0 && $vbulletin->options['adi_can_guest_use'] != 1)
+{
+	$adi_show_menu = false;
+}
+if($adi_show_menu && !function_exists('set_navigation_tab'))
+{
+	global $template_hook;
+	$adiinviter_page = 0;
+	if(defined('ADIINVITER_SCRIPT'))
+	{
+		$adiinviter_page = 1;
+	}
+	vB_Template::preRegister('adiinviter_menu', array('adiinviter_page' => $adiinviter_page));
+	$newTemplate = vB_Template::create('adiinviter_menu');
+	$template_hook['navtab_end'] .= $newTemplate->render();
+}]]></phpcode>
+		</plugin>
+	</plugins>
+	<phrases>
+		<phrasetype name="GLOBAL" fieldname="global">
+			<phrase name="adiinviter_admincp_control_panel" date="1399458047" username="admin" version="0.7"><![CDATA[AdiInviter Pro Settings]]></phrase>
+			<phrase name="settinggroup_adiinviter_pro_settings" date="1399458047" username="admin" version="0.7"><![CDATA[AdiInviter Pro Settings]]></phrase>
+      <phrase name="vb_navigation_tab_tab_otyy_117_text" date="1399624181" username="admin" version="4.2.2"><![CDATA[Invite Friends]]></phrase>
+		</phrasetype>
+		<phrasetype name="vBulletin Settings" fieldname="vbsettings">
+			<phrase name="setting_adi_can_guest_use_desc" date="1399614366" username="admin" version="0.7"><![CDATA[Choose "No" to disable AdiInviter Pro for guest or not-loggedin users.]]></phrase>
+			<phrase name="setting_adi_can_guest_use_title" date="1399614366" username="admin" version="0.7"><![CDATA[Enable AdiInviter Pro for Guest Users]]></phrase>
+			<phrase name="setting_adi_invitation_body_desc" date="1399614343" username="admin" version="0.7"><![CDATA[Specify invitation email body here (HTML).
+<br><br><br><br>
+Powered By <a target="_blank" href="https://www.adiinviter.com">AdiInviter Pro</a> v0.7 Lite Edition]]></phrase>
+			<phrase name="setting_adi_invitation_body_title" date="1399614343" username="admin" version="0.7"><![CDATA[Invitation Body]]></phrase>
+			<phrase name="setting_adi_invitation_subject_desc" date="1399614349" username="admin" version="0.7"><![CDATA[Specify Invitation Subject here.]]></phrase>
+			<phrase name="setting_adi_invitation_subject_title" date="1399614349" username="admin" version="0.7"><![CDATA[Invitation Subject]]></phrase>
+			<phrase name="setting_adi_system_onoff_desc" date="1399613888" username="admin" version="0.7"><![CDATA[Choose "No" to disable AdiInviter Pro globally.]]></phrase>
+			<phrase name="setting_adi_system_onoff_title" date="1399613888" username="admin" version="0.7"><![CDATA[Enable AdiInviter Pro]]></phrase>
+			<phrase name="settinggroup_adiinviter_pro_settings" date="1399382037" username="admin" version="0.7"><![CDATA[AdiInviter Pro Settings]]></phrase>
+		</phrasetype>
+	</phrases>
+	<options>
+		<settinggroup name="adiinviter_pro_settings" displayorder="10">
+			<setting varname="adi_system_onoff" displayorder="0">
+				<datatype>number</datatype>
+				<optioncode>yesno</optioncode>
+				<defaultvalue>1</defaultvalue>
+			</setting>
+			<setting varname="adi_invitation_subject" displayorder="10">
+				<datatype>free</datatype>
+				<defaultvalue>Invitation to join Your Website</defaultvalue>
+			</setting>
+			<setting varname="adi_invitation_body" displayorder="20">
+				<datatype>free</datatype>
+				<optioncode>textarea</optioncode>
+				<defaultvalue><![CDATA[<table cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td style="background-color: #F1E9DA;">
+<center>
+	<table cellpadding="0" cellspacing="0" width="600">
+	<tr>
+		<td>
+			<img style="height: 75px;margin: 15px 0px;" src="http://i.imgur.com/id8Bajk.png">
+		</td>
+	</tr>
+	<tr>
+		<td>
+
+			<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td>
+					<div style="background-color: #333;color:#FFFFFF;font-family:Verdana,Arial;font-size:21px;padding: 15px 10px;">
+						Invitation to join Your Website
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div style="background-color: #FFFFFF;color:#282828;padding: 8px;font-family:Verdana,Arial;font-size:14px;line-height:21px;border: 1px solid #a0a0a0;border-top:none;">
+						<p>This is a sample invitation message sent using AdiInviter Pro Contacts Inviter Lite Edition v0.7.</p>
+						<p>AdiInviter Pro contacts inviter allows your members to invite their friends to your website from various webmail and social network websites.</p>
+						<br><br><br>
+						<div style="text-align:center;"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" strokecolor="#1e3650" fillcolor="#233240">
+    <w:anchorlock/>
+    <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Show me the button!</center>
+  </v:roundrect>
+<![endif]--><a href="http://"
+style="background-color:#233240;border:1px solid #1e3650;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;margin-bottom:10px;">Join Now</a></div>
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div style="color: #a8a8a8;font-size:12px;font-family:Verdana,Arial;margin: 30px 0px;text-align:center;line-height:20px;">
+				This message has been sent using AdiInviter Pro Contacts Inviter - Lite Edition v0.7.
+				<br>
+				<a style="color: #a8a8a8;" href="http://yourdomain.com/privacy_policy.php">Privacy Policy</a> | <a style="color: #a8a8a8;" href="http://yourdomain.com/terms_of_conditions.php">Terms of Conditions</a>
+			</div>
+		</td>
+	</tr>
+	</table>
+</center>
+
+
+</td>
+	</tr>
+	</table>]]></defaultvalue>
+			</setting>
+			<setting varname="adi_can_guest_use" displayorder="30">
+				<datatype>free</datatype>
+				<optioncode>yesno</optioncode>
+				<defaultvalue>0</defaultvalue>
+			</setting>
+		</settinggroup>
+	</options>
+	<helptopics>
+	</helptopics>
+	<cronentries>
+	</cronentries>
+	<faqentries>
+	</faqentries>
+	<navigation>
+    <tab name="tab_otyy_117" date="1399624181" username="admin" version="4.2.2">
+      <active>1</active>
+      <show />
+      <scripts />
+      <displayorder>50</displayorder>
+      <url>adiinviter.php</url>
+      <menuid />
+      <newpage>0</newpage>
+    </tab>
+  </navigation>
+</product>

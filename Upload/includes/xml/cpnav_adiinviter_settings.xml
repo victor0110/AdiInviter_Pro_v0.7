@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<navgroups product="vbulletin">
+	<navgroup text="AdiInviter Pro-Lite" hr="true" displayorder="1">
+		<navoption displayorder="1">
+			<phrase>adiinviter_admincp_control_panel</phrase>
+			<link>options.php?dogroup=adiinviter_pro_settings</link>
+		</navoption>
+	</navgroup>
+</navgroups>

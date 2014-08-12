@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style type="text/css">
+*
+{
+	font-family:Verdana, Arial;
+	color: #233240;
+}
+a {
+	color: #ba3030;
+	font-weight: bold;
+	font-family: Verdana,Arial;
+	text-decoration:none;
+	cursor: pointer;
+}
+a:hover
+{
+	color: #233240;
+}
+
+.current_menu
+{
+	background: 
+}
+.panel_out
+{
+
+}
+
+p {
+	margin: 20px 0px;
+}
+.subhead
+{
+	font-weight: bold;
+	color: #233240;
+}
+.ol_points
+{
+	margin-bottom: 25px;
+}
+.ol_points li
+{
+	line-height: 16px;
+	margin-left: 0px;
+	margin-bottom: 10px;
+}
+.sub_panel {
+	padding-left: 15px;
+}
+
+
+
+.credits_arrow_box {
+	position: relative;
+	padding: 10px;
+	border-bottom: 1px solid #AAA;
+}
+.credits_arrow_box:after, .credits_arrow_box:before {
+	top: 100%;
+	left: 10%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.credits_arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #F5F5F5;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.credits_arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #AAA;
+	border-width: 12px;
+	margin-left: -12px;
+}
+
+
+.install_arrow_box {
+	position: relative;
+	padding: 10px;
+	border-bottom: 1px solid #AAA;
+}
+.install_arrow_box:after, .install_arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.install_arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #F5F5F5;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.install_arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #AAA;
+	border-width: 12px;
+	margin-left: -12px;
+}
+
+
+
+
+.uninstall_arrow_box {
+	position: relative;
+	padding: 10px;
+	border-bottom: 1px solid #AAA;
+}
+.uninstall_arrow_box:after, .uninstall_arrow_box:before {
+	top: 100%;
+	left: 92%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.uninstall_arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #F5F5F5;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.uninstall_arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #AAA;
+	border-width: 12px;
+	margin-left: -12px;
+}
+
+
+
+
+</style>
+<script type="text/javascript">
+function show_tab(tid)
+{
+	o = document.getElementById('credits_panel');
+	o.style.display = 'none';
+	o = document.getElementById('install_panel');
+	o.style.display = 'none';
+	o = document.getElementById('uninstall_panel');
+	o.style.display = 'none';
+
+	o = document.getElementById(tid);
+	o.style.display = 'block';
+
+	o = document.getElementById('arrow_box');
+
+	if(tid == 'credits_panel')
+	{
+	o.className = 'credits_arrow_box';
+
+	}
+	else if(tid == 'install_panel')
+	{
+	o.className = 'install_arrow_box';
+
+	}
+	else if(tid == 'uninstall_panel')
+	{
+	o.className = 'uninstall_arrow_box';
+
+	}
+
+	
+}
+</script>
+</head>
+<body style="background-color: #FdFdFD; font-size: 13px;">
+
+<center>
+	<img src="adiinviter_pro_lite_edition.png" style="margin: 25px 0px;">
+
+
+<table cellpadding="0" cellspacing="0" width="100%" style="max-width: 800px;">
+	<tr>
+		<td>
+			<div style="border: 1px solid #CCC;">
+				<div style="background-color: #F5F5F5;">
+					<div class="credits_arrow_box" id="arrow_box">
+					<table cellpadding="0" cellspacing="0" width="100%" style="max-width: 800px;">
+					<tr>
+						<td width="33%" class="current_menu" onclick="show_tab('credits_panel');return false;"><a href="">Copyrights & Credits</a></td>
+						<td width="33%" align="center" onclick="show_tab('install_panel');return false;"><a href="">Installation Steps</a></td>
+						<td width="33%" align="right" onclick="show_tab('uninstall_panel');return false;"><a href="">Uninstall Steps</a></td>
+						</tr>
+					</table>
+					</div>
+					<div class="panel_out" style="padding: 10px;">
+
+						<div id="credits_panel">
+							<p class="subhead">Copyright Statement.</p>
+
+							<p class="sub_panel">&#169; Copyrights AdiInviter Inc. All rights reserved 2014.</p>
+
+							<p class="subhead">License Agreement (For AdiInviter Pro v0.7 Lite Edition).</p>
+							<ol class="ol_points">
+								<li>You are free to download and install this plugin on any vBulletin forum for which you hold a valid vB license.</li>
+								<li>You ARE NOT allowed to REMOVE or MODIFY the copyright text within the .php files themselves.</li>
+								<li>You ARE NOT allowed to DISTRIBUTE the contents of any of the included files.</li>
+								<li>You ARE NOT allowed to COPY ANY PARTS of the code and/or use it for distribution.</li>
+							</ol>
+							
+							<p style="text-align:center;margin:10px 0px;">
+								<a target="_blank" href="https://www.adiinviter.com"><img src="adiinviter_pro_full_version.png" alt="AdiInviter"></a>
+							</p>
+						</div>
+
+						<div id="install_panel" style="display:none;padding: 10px;">
+							<p class="subhead">Installation Instructions.</p>
+
+							<ol class="ol_points">
+								<li>Upload contents of folder <b>Upload</b> to your <i style="color:#ba3030;">vBulletin forum root</i> folder.</li>
+								<li>Go to your <b>Admincp -> Plugins & Products -> Manage Products</b>.
+								<br> <br>
+									<ul class="ol_points" style="margin-bottom: 15px;list-style:disc; ">
+										<li>Click on <b>[Add/Import Product]</b>.</li>
+										<li>Browse to the <b>Product XML</b> folder and open <b>adiinviter_pro_lite_07.xml</b>, click <b>Import</b>.</li>
+									</ul>
+								</li>
+								<li>Go to your <b>Admincp -> AdiInviter Pro-Lite </b><i style="color:#ba3030;">(On the left panel)</i><b> -> AdiInviter Pro Settings</b>, and configure AdiInviter Pro v0.7 Lite.</li>
+							</ol>
+
+							<p style="text-align:center;margin:10px 0px;">
+								<a target="_blank" href="https://www.adiinviter.com"><img src="adiinviter_pro_full_version.png" alt="AdiInviter"></a>
+							</p>
+						</div>
+
+						<div id="uninstall_panel" style="display:none;padding: 10px;">
+							<p class="subhead">Uninstallation Instructions.</p>
+
+							<ol class="ol_points">
+								<li>Go to your <b>Admincp -> Plugins & Products -> Manage Products</b>.
+								<br> <br>
+									<ul class="ol_points" style="margin-bottom: 15px;list-style:disc; ">
+										<li>Look for product <b>AdiInviter Pro v0.7 Lite</b> and select <b>Uninstall</b> from the controls dropdown menu.</li>
+									</ul>
+								</li>
+								<li>Remove following files from your FTP -
+								<br> <br>
+									<ul class="ol_points" style="margin-bottom: 15px;list-style:disc; ">
+										<li><i>your_forum_root</i><b>/adiinviter.php</b></li>
+										<li><i>your_forum_root</i><b>/includes/xml/cpnav_adiinviter_settings.xml</b></li>
+										<li><font style="color:#ba3030;">Remove folder :</font> <i>your_forum_root</i><b>/images/adiinviter</b></li>
+									</ul>
+								</li></li>
+							</ol>
+
+							<p style="text-align:center;margin:10px 0px;">
+								<a target="_blank" href="https://www.adiinviter.com"><img src="adiinviter_pro_full_version.png" alt="AdiInviter"></a>
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+</center>
+</body>
+</html>
